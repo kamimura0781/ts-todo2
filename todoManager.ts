@@ -1,18 +1,28 @@
-import {readTodo,writeTodo} from "./io";
+import {readFile,writeFile,readTodo,writeTodo} from "./io";
 import {genId} from "./idManager";
+import {filtering} from "./dateManager";
 
 export interface ITodo{
     content:string;
     id:number;
     completed:boolean;
+    genDate:Date;
+    completedDate:Date;
+}
+
+export function setup(){
+    writeFile("todo.json","[]");
+    writeFile("counter.txt",0);
+    console.log("初期化完了．");
 }
 
 export function list(){
     const todos:ITodo[] = readTodo();
     console.log("TODOList:")
     for(const todo of todos){
-        if(todo.completed == false){
-            console.log(`id:${todo.id},todo:${todo.content}`)
+        if(!filtering(todo,3)){
+            const state = todo.completed ? "✅" : " ";
+            console.log( `${state}  [${todo.id}] [${todo.genDate}~${todo.completedDate}]   ${todo.content}`)
         }
     }
 }
@@ -22,7 +32,9 @@ export function add(todo :string){
     const newTodo:ITodo = {
         content:todo,
         id:newId,
-        completed:false
+        completed:false,
+        genDate:new Date(),
+        completedDate:new Date(0,0,0,0,0)
     };
     const todos:ITodo[] = readTodo();
     todos.push(newTodo);

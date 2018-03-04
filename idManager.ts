@@ -1,8 +1,8 @@
-import * as fs from "fs";
+import {readFile,writeFile} from "./io";
 
 export function genId(){
-    let counter:number = parseInt(fs.readFileSync('counter.txt','utf-8'))
+    let counter:number = parseInt(readFile('counter.txt'))
     counter+=1;
-    fs.writeFileSync('counter.txt',counter);
+    writeFile('counter.txt',counter);
     return counter;
 }

@@ -1,1 +1,1 @@
-[{"content":"hoge","id":1,"completed":false},{"content":"fuga","id":2,"completed":true}]
+[{"content":"hoge","id":1,"completed":true,"genDate":"2018-03-04T06:40:24.870Z","completedDate":"1899-12-30T15:00:00.000Z"},{"content":"fuga","id":2,"completed":true,"genDate":"2018-03-04T06:40:27.392Z","completedDate":"1899-12-30T15:00:00.000Z"}]
