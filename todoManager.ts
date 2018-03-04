@@ -9,7 +9,7 @@ export interface ITodo{
     genDate:Date;
     completedDate:Date;
 }
-
+hogehoge
 export function setup(){
     writeFile("todo.json","[]");
     writeFile("counter.txt",0);

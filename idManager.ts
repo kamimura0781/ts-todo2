@@ -6,3 +6,4 @@ export function genId(){
     writeFile('counter.txt',counter);
     return counter;
 }
+hogehoge
