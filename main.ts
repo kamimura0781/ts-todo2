@@ -2,8 +2,6 @@ import { setup, add, complete, list } from "./todoManager";
 
 const [_1, _2, subcommand, arg] = process.argv;
 
-hogehoge
-fugafuga
 switch(subcommand){
     case "setup":
         setup();
