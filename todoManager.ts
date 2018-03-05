@@ -15,7 +15,7 @@ export function setup(){
     writeFile("counter.txt",0);
     console.log("初期化完了．");
 }
-hogehoge
+
 export function list(){
     const todos:ITodo[] = readTodo();
     console.log("TODOList:")
