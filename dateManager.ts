@@ -6,7 +6,3 @@ export function filtering(todo:ITodo,days:number):boolean{
     const diff = (todo.completedDate.getDate() - todo.genDate.getDate());
     return (diff/(1000*60*60*24)) > 3;
 }
-
-function test(){
-    
-}
