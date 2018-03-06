@@ -7,7 +7,7 @@ export interface ITodo{
     id:number;
     completed:boolean;
     genDate:Date;
-    completedDate:Date;
+    completedDate:Date|null;
 }
 
 export function setup(){
@@ -48,8 +48,9 @@ export function complete(id_str:string){
     const todos = readTodo();
     for(i=0;i<todos.length;i++){
         if(todos[i].id == id){
-            if(todos[1].completed == false){
+            if(todos[i].completed == false){
                 todos[i].completed = true;
+                todos[i].completedDate = new Date();
                 writeTodo(todos);
                 console.log(`TODO:${todos[i].content}を完了しました．`)
             }else{

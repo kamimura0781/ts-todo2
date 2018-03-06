@@ -14,6 +14,17 @@ export function writeFile(fileName:string, str:any):void{
 //todo.jsonからTODOリストを取得
 export function readTodo():ITodo[]{
     const todos:ITodo[] = JSON.parse(fs.readFileSync(jsonFileName,'utf-8'));
+    for(const todo of todos){
+        //JSONをParseした時点では日付がstring型となっているので，Date型へと変換する
+        //todo.genDate = Date.parse(todo.genDate)
+        const strDate:string = todo.genDate.toString();
+        todo.genDate = new Date(strDate);
+        if(todo.completedDate == null){
+            todo.completedDate = null;
+        }else{
+            todo.completedDate = new Date(todo.completedDate!.toString());
+        }
+    }
     return todos;
 }
 
