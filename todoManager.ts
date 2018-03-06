@@ -40,7 +40,7 @@ export function add(todo :string){
     todos.push(newTodo);
     writeTodo(todos);
     console.log(`TODO:${newTodo.content}を追加しました．`)
-}
+}hgoe
 
 export function complete(id_str:string){
     let i:number;
