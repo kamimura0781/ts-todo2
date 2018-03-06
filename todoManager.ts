@@ -34,7 +34,7 @@ export function add(todo :string){
         id:newId,
         completed:false,
         genDate:new Date(),
-        completedDate:new Date(0,0,0,0,0)
+        completedDate:null
     };
     const todos:ITodo[] = readTodo();
     todos.push(newTodo);
